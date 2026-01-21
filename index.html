@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NINE TAILS LOCKDOWN</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- add later if you have favicon -->
   <style>
     body {
       margin: 0;
@@ -18,8 +17,9 @@
       height: 100vh;
       object-fit: contain;
       display: block;
-      image-rendering: crisp-edges;           /* sharper scaling */
-      image-rendering: -webkit-optimize-contrast; /* Chrome/Edge fix */
+      image-rendering: crisp-edges; /* Firefox, Edge */
+      image-rendering: pixelated; /* Chrome */
+      image-rendering: -webkit-optimize-contrast; /* Safari, iOS */
     }
     .btn {
       position: absolute;
@@ -29,10 +29,9 @@
       font-weight: bold;
       border: none;
       border-radius: 6px;
-      cursor: pointer;
+      cursor: pointer; /* Cross-browser pointer cursor */
       text-decoration: none;
       font-size: 14px;
-      z-index: 10; /* ensure buttons are above image */
     }
     #download {
       bottom: 40px;
@@ -42,10 +41,21 @@
       bottom: 40px;
       right: 220px;
     }
+    /* Mobile/device fix: Adjust button positions for small screens */
+    @media (max-width: 768px) {
+      #download {
+        bottom: 20px;
+        right: 20px;
+      }
+      #getposter {
+        bottom: 20px;
+        right: 140px;
+      }
+    }
   </style>
 </head>
 <body>
-  <img src="banshee_coil_final_teaser_2.png" alt="Banshee Coil Teaser - Nine Tails Lockdown 2947">
+  <img src="banshee_coil_final_teaser_2.png" alt="Nine Tails Lockdown Poster">
 
   <a href="banshee_coil_final_teaser_2.png" download="banshee_coil_final_teaser_2.png" class="btn" id="download">DOWNLOAD 8K</a>
   <a href="https://star-citizen-companion-yzbezvbhuocnzkkqzwtp.sites.blink.new/" target="_blank" class="btn" id="getposter">GET POSTER</a>
